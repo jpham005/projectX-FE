@@ -1,0 +1,71 @@
+body,
+html {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.mainMenuContainer {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+a {
+  flex: 1;
+  text-decoration: none;
+  text-align: center;
+  line-height: 3;
+  color: black;
+}
+
+a:link,
+a:visited,
+a:focus {
+  background: white;
+  color: black;
+}
+
+a:hover {
+  background: ghostwhite;
+}
+
+a:active {
+  background: gray;
+  color: white;
+}
+
+.titleContainer {
+  display: block;
+}
+
+h1 {
+  text-align: center;
+  text-shadow: 2px 2px 2px gray;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.sideMenuContainer {
+  flex: 1;
+  font-size: 18px;
+  text-align: center;
+}
+
+.sideMenu {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70%;
+}
+
+.mainTextContainer {
+  flex: 3;
+}
+
+.footerContainer {
+  text-align: right;
+}
