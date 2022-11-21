@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Jaham's SignUp Practice</title>
+    <link rel="icon" href="http://localhost/favicon.ico">
+    <link rel="stylesheet" href="index.css">
+    <base href="http://localhost">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="Jaham">
+    <meta name="description" contexnt="Jaham's projectX subject">
+    <meta name="keywords" content="Jaham,jaham,42,projectx,projectX,project-X,SignUp">
+  </head>
+  <body>
+    <nav class="mainMenuContainer">
+      <a href="#title">Title</a>
+      <a href="#intro">Introduction</a>
+      <a href="#signup">SignUp</a>
+    </nav>
+    <header>
+      <h1 id="title">Jaham's SignUp Practice</h1>
+    </header>
+    <div class="contentContainer">
+      <main class="mainTextContainer">
+        <p id="intro">
+          This application provides you to practice signing up with simple example.<br/>
+          Try to be a pro-signner!
+        </p>
+        <form id="signup">
+          <div>
+            <label>
+              Name:
+              <input id="userName" type="text" required />
+            </label>
+          </div>
+          <div>
+            <label>
+              Id:
+              <input id="userId" type="text" required autocomplete="username" />
+            </label>
+          </div>
+          <div>
+            <label>
+              Password:
+              <input
+                id="userPassword"
+                type="password"
+                required
+                minlength="8"
+                maxlength="20"
+                title="Format: 8-20 long, Containes at least one Lowercase, one Uppercase and"
+                autocomplete="current-password"
+              />
+              <div>
+                <small>
+                  Format: 8-20 long, Containes at least one Lowercase, one Uppercase and
+                  one Digit
+                </small>
+              </div>
+            </label>
+          </div>
+          <div>
+            <label>
+              Phone:
+              <input
+                id="userPhone"
+                type="tel"
+                required
+                placeholder="010-1234-5678"
+                title="Format: Numbers which is seperated by `-'"
+              />
+              <div>
+                <small>Format: Numbers which is seperated by `-'</small>
+              </div>
+          </div>
+          </label>
+          <div>
+            <label>
+              Email:
+              <input
+                id="userEmail"
+                type="email"
+                required
+                placeholder="example@ex.com"
+                title="Format: Your email with both `@' and `.'"
+                autocomplete="email"
+              />
+              <div>
+                <small>Format: Your email with both `@' and `.'</small>
+              </div>
+          </div>
+          </label>
+          <div>
+            <input id="submitButton" type="submit" value="Submit" formtarget="_blank" />
+            <script>
+              const handleSubmitClick = (e) => {
+                const userName = document.querySelector("#userName");
+                const userId = document.querySelector("#userId");
+                const userPassword = document.querySelector("#userPassword");
+                const userPhone = document.querySelector("#userPhone");
+                const userEmail = document.querySelector("#userEmail");
+                console.log(`username: ${userName.value}`);
+              }
+
+              const submitButton = document.querySelector("input[type=submit]");
+              submitButton.addEventListener("click", handleSubmitClick);
+            </script>
+          </div>
+        </form>
+      </main>
+      <aside class="sideMenuContainer">
+        <div>
+          More Challenges!
+        </div>
+        <div class="sideMenu">
+          <a href="https://www.google.com">google</a>
+          <a href="https://www.naver.com">naver</a>
+          <a href="https://intra.42.fr">42</a>
+        </div>
+      </aside>
+    </div>
+    <footer class="footerContainer">
+      <small>Copyright 2022. Jaham All rights reserved.</small>
+    </footer>
+  </body>
+</html>
