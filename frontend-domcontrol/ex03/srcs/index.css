@@ -60,6 +60,11 @@ h1 {
   display: flex;
   flex-direction: column;
   margin-bottom: 70%;
+  padding-left: 10%;
+}
+
+.sideMenuLink {
+  text-align: left;
 }
 
 .mainTextContainer {

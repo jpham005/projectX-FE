@@ -90,19 +90,95 @@
           </div>
           </label>
           <div>
-            <input id="submitButton" type="submit" value="Submit" formtarget="_blank" />
+            <button id="submitButton">Submit</button>
             <script>
+              class UserInput {
+                userName;
+                userId;
+                userPassword;
+                userPhone;
+                userEmail;
+                constructor() {
+                  this.userName = null
+                  this.userId = null
+                  this.userPassword = null
+                  this.userPhone = null
+                  this.userEmail = null
+                }
+
+                setInput(userName, userId, userPassword, userPhone, userEmail) {
+                  this.userName = userName;
+                  this.userId = userId;
+                  this.userPassword = userPassword;
+                  this.userPhone = userPhone;
+                  this.userEmail = userEmail;
+                }
+              };
+              
+              class EventHandler extends UserInput {
+                history;
+                constructor() {
+                  super();
+                  this.history = [];
+                }
+
+                setInput(userName, userId, userPassword, userPhone, userEmail) {
+                  this.history.push({
+                    userName,
+                    userId,
+                  });
+
+                  if (this.history.length > 5) {
+                    this.history.splice(0, this.history.length - 5);
+                  }
+
+                  super.setInput(userName, userId, userPassword, userPhone, userEmail);
+                }
+
+                logInput() {
+                  if (this.userName && this.userId && this.userPassword && this.userPhone && this.userEmail)
+                    console.log(`userName: ${this.userName}\nuserId: ${this.userId}\nuserPassword: ${this.userPassword}\nuserPhone: ${this.userPhone}\nuserEmail: ${this.userEmail}`);
+                }
+                
+                alertInput() {
+                  if (this.userName && this.userId && this.userPassword && this.userPhone && this.userEmail)
+                    alert(`userName: ${this.userName}\nuserId: ${this.userId}\nuserPassword: ${this.userPassword}\nuserPhone: ${this.userPhone}\nuserEmail: ${this.userEmail}`);
+                }
+
+                clearInput() {
+                  super.setInput(null, null, null, null, null);
+                }
+
+                showHistory = function () {
+                  this.history.forEach((curr, index) => console.debug(`index: ${index} username: ${curr.userName}, userId: ${curr.userId}`));
+                }
+              };
+
+              const eventHandler = new EventHandler();
+              
               const handleSubmitClick = (e) => {
+                e.preventDefault();
                 const userName = document.querySelector("#userName");
                 const userId = document.querySelector("#userId");
                 const userPassword = document.querySelector("#userPassword");
                 const userPhone = document.querySelector("#userPhone");
                 const userEmail = document.querySelector("#userEmail");
-                console.log(`username: ${userName.value}`);
+                
+                eventHandler.setInput(userName.value, userId.value, userPassword.value, userPhone.value, userEmail.value);
+                eventHandler.logInput();
+                eventHandler.alertInput();
+                eventHandler.clearInput();
+                (function example () { eventHandler.showHistory(); }());
+
+                userName.value = '';
+                userId.value = '';
+                userPassword.value = '';
+                userPhone.value = '';
+                userEmail.value = '';
               }
 
-              const submitButton = document.querySelector("input[type=submit]");
-              submitButton.addEventListener("click", handleSubmitClick);
+              const inputForm = document.querySelector("#signup");
+              inputForm.addEventListener("submit", handleSubmitClick);
             </script>
           </div>
         </form>
@@ -112,9 +188,9 @@
           More Challenges!
         </div>
         <div class="sideMenu">
-          <a href="https://www.google.com">google</a>
-          <a href="https://www.naver.com">naver</a>
-          <a href="https://intra.42.fr">42</a>
+          <a class="sideMenuLink" href="https://www.google.com">google</a>
+          <a class="sideMenuLink" href="https://www.naver.com">naver</a>
+          <a class="sideMenuLink" href="https://intra.42.fr">42</a>
         </div>
       </aside>
     </div>
