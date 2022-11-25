@@ -21,4 +21,4 @@ down:
 .PHONY: clean
 clean:
 	make down
-	docker rmi --force ex01-nginx
+	docker rmi --force ex02-nginx
