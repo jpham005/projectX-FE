@@ -1,0 +1,58 @@
+html,
+body,
+main {
+  width: 100%;
+  height: 100%;
+  margin: 0 0;
+  min-height: 200px;
+  min-width: 200px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.thumbnailGrid {
+  width: 90%;
+  height: 60%;
+  margin: 10% auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 30%;
+  gap: 5% 5%;
+  overflow: hidden;
+}
+
+.thumbnailContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  flex-direction: column;
+}
+
+.thumbnailImage {
+  border: solid 5px;
+  width: calc(100% - 10px);
+  height: calc(80% - 10px);
+  object-fit: contain;
+}
+
+.thumbnailTitle {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  font-size: x-large;
+}
+
+.thumbnailContent {
+  display: none;
+  font-size: xx-large;
+}
+
+.thumbnailContainer:hover .thumbnailImage {
+  display: none;
+}
+
+.thumbnailContainer:hover .thumbnailContent {
+  display: unset;
+  margin: auto;
+}
