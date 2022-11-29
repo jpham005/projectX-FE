@@ -6,7 +6,7 @@ main {
   margin: 0 0;
 }
 
-.thumbnailContainer {
+.thumbnailGrid {
   width: 90%;
   height: 50%;
   margin: 10% auto;
@@ -17,9 +17,31 @@ main {
   overflow: hidden;
 }
 
-.thumbnailImage {
+.thumbnailContainer {
   width: calc(100% - 10px);
   height: calc(100% - 10px);
   border: solid 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.thumbnailImage {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+.thumbnailContent {
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: none;
+}
+
+.thumbnailContainer:hover .thumbnailImage {
+  display: none;
+}
+
+.thumbnailContainer:hover .thumbnailContent {
+  display: inline;
 }
