@@ -1,16 +1,18 @@
 const titles = document.querySelectorAll('.thumbnailTitle');
+const popupContainerBackground = document.querySelector(
+  '.popupContainerBackground'
+);
 
 titles.forEach((curr) => {
   curr.addEventListener('click', (e) => {
-    const popup = window.open(
-      './layerPopup.html',
-      'titlePopup',
-      'popup, width=800px, height=600px'
-    );
+    popupContainerBackground.style.display = 'flex';
 
-    popup.onload = () => {
-      const popupContent = popup.document.querySelector('.popupContent');
-      popupContent.innerHTML = e.target.innerHTML;
-    };
+    const popupContent = document.querySelector('.popupContent');
+    popupContent.innerHTML = e.target.innerHTML;
   });
+});
+
+const popupCloseButton = document.querySelector('.closePopupButton');
+popupCloseButton.addEventListener('click', () => {
+  popupContainerBackground.style.display = 'none';
 });
