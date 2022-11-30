@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: nginx.dockerfile
+    restart: always
+    volumes:
+      - ./srcs:/usr/share/nginx/html:ro
+    ports:
+      - 80:80
+    env_file:
+      - ./.env
