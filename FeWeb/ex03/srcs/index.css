@@ -7,10 +7,11 @@ main {
   width: 100%;
   height: 100%;
   margin: 0 0;
-  min-height: 200px;
-  min-width: 200px;
+  min-height: 700px;
+  min-width: 700px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   z-index: 0;
+  background-color: black;
 }
 
 .thumbnailGrid {
@@ -25,6 +26,7 @@ main {
 }
 
 .thumbnailContainer {
+  background-color: rgb(39, 39, 39);
   width: 100%;
   height: 100%;
   display: flex;
@@ -37,6 +39,7 @@ main {
   width: calc(100% - 10px);
   height: calc(80% - 10px);
   border: solid 5px;
+  border-color: rgb(39, 39, 39);
 }
 
 .thumbnailImage {
@@ -50,21 +53,23 @@ main {
   height: 20%;
   text-align: center;
   font-size: x-large;
+  color: rgb(206, 206, 206);
 }
 
 .thumbnailContent {
   display: none;
   font-size: xx-large;
+  color: rgb(206, 206, 206);
 }
 
-/* .thumbnailContainer:hover .thumbnailImage {
+.thumbnailContainer:hover .thumbnailImage {
   display: none;
-} */
+}
 
-/* .thumbnailContainer:hover .thumbnailContent {
+.thumbnailContainer:hover .thumbnailContent {
   display: unset;
   margin: auto;
-} */
+}
 
 .popupContainer {
   display: flex;
@@ -86,10 +91,12 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: rgb(39, 39, 39);
 }
 
 .popupContent {
   font-size: xx-large;
+  color: rgb(206, 206, 206);
 }
 
 .closePopupButton {
@@ -100,8 +107,9 @@ main {
   flex: 1;
   font-size: large;
   text-align: center;
-  color: whitesmoke;
+  color: rgb(206, 206, 206);
   border-width: 0px;
+  border-color: rgb(39, 39, 39);
 }
 
 .popupContainerBackground {
@@ -118,6 +126,11 @@ main {
   justify-content: center;
 }
 
+a {
+  text-decoration: none;
+}
+
 a:visited {
   color: unset;
+  text-decoration: unset;
 }
