@@ -117,3 +117,7 @@ main {
   background-color: rgba(97, 96, 96, 0.519);
   justify-content: center;
 }
+
+a:visited {
+  color: unset;
+}
